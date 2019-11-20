@@ -1,0 +1,1638 @@
+{
+  "consumes": [
+    "application/json"
+  ],
+  "definitions": {
+    "BinarySwitch": {
+      "properties": {
+        "if": {
+          "description": "",
+          "items": {
+            "enum": [
+              "oic.if.a",
+              "oic.if.baseline"
+            ],
+            "type": "string"
+          },
+          "minItems": 2,
+          "readOnly": true,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "n": {
+          "description": "",
+          "maxLength": 64,
+          "readOnly": true,
+          "type": "string"
+        },
+        "rt": {
+          "default": [
+            "oic.r.switch.binary"
+          ],
+          "description": "",
+          "items": {
+            "enum": [
+              "oic.r.switch.binary"
+            ],
+            "maxLength": 64,
+            "type": "string"
+          },
+          "minItems": 1,
+          "readOnly": true,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "value": {
+          "description": "",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "value"
+      ],
+      "type": "object"
+    },
+    "Humidity": {
+      "properties": {
+        "desiredHumidity": {
+          "description": "",
+          "maximum": 100,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "humidity": {
+          "description": "",
+          "maximum": 100,
+          "minimum": 0,
+          "readOnly": true,
+          "type": "integer"
+        },
+        "if": {
+          "description": "",
+          "items": {
+            "enum": [
+              "oic.if.a",
+              "oic.if.baseline"
+            ],
+            "type": "string"
+          },
+          "minItems": 2,
+          "readOnly": true,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "n": {
+          "description": "",
+          "maxLength": 64,
+          "readOnly": true,
+          "type": "string"
+        },
+        "rt": {
+          "default": [
+            "oic.r.humidity"
+          ],
+          "description": "",
+          "items": {
+            "enum": [
+              "oic.r.humidity"
+            ],
+            "maxLength": 64,
+            "type": "string"
+          },
+          "minItems": 1,
+          "readOnly": true,
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "humidity"
+      ],
+      "type": "object"
+    },
+    "HumidityUpdate": {
+      "properties": {
+        "desiredHumidity": {
+          "description": "",
+          "maximum": 100,
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "desiredHumidity"
+      ],
+      "type": "object"
+    },
+    "Platform": {
+      "properties": {
+        "id": {
+          "description": "",
+          "maxLength": 64,
+          "readOnly": true,
+          "type": "string"
+        },
+        "if": {
+          "description": "",
+          "items": {
+            "enum": [
+              "oic.if.baseline",
+              "oic.if.r"
+            ],
+            "maxLength": 64,
+            "type": "string"
+          },
+          "minItems": 2,
+          "readOnly": true,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "mndt": {
+          "description": "",
+          "pattern": "^([0-9]{4})-(1[0-2]|0[1-9])-(3[0-1]|2[0-9]|1[0-9]|0[1-9])$",
+          "readOnly": true,
+          "type": "string"
+        },
+        "mnfv": {
+          "description": "",
+          "maxLength": 64,
+          "readOnly": true,
+          "type": "string"
+        },
+        "mnhw": {
+          "description": "",
+          "maxLength": 64,
+          "readOnly": true,
+          "type": "string"
+        },
+        "mnml": {
+          "description": "",
+          "format": "uri",
+          "maxLength": 256,
+          "readOnly": true,
+          "type": "string"
+        },
+        "mnmn": {
+          "description": "",
+          "maxLength": 64,
+          "readOnly": true,
+          "type": "string"
+        },
+        "mnmo": {
+          "description": "",
+          "maxLength": 64,
+          "readOnly": true,
+          "type": "string"
+        },
+        "mnnct": {
+          "description": "",
+          "items": {
+            "description": "",
+            "minimum": 1,
+            "type": "integer"
+          },
+          "minItems": 1,
+          "readOnly": true,
+          "type": "array"
+        },
+        "mnos": {
+          "description": "",
+          "maxLength": 64,
+          "readOnly": true,
+          "type": "string"
+        },
+        "mnpv": {
+          "description": "",
+          "maxLength": 64,
+          "readOnly": true,
+          "type": "string"
+        },
+        "mnsel": {
+          "description": "",
+          "maxLength": 64,
+          "readOnly": true,
+          "type": "string"
+        },
+        "mnsl": {
+          "description": "",
+          "format": "uri",
+          "maxLength": 256,
+          "readOnly": true,
+          "type": "string"
+        },
+        "pi": {
+          "description": "",
+          "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$",
+          "readOnly": true,
+          "type": "string"
+        },
+        "rt": {
+          "default": [
+            "oic.wk.p"
+          ],
+          "description": "",
+          "items": {
+            "enum": [
+              "oic.wk.p"
+            ],
+            "maxLength": 64,
+            "type": "string"
+          },
+          "minItems": 1,
+          "readOnly": true,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "st": {
+          "description": "",
+          "format": "date-time",
+          "readOnly": true,
+          "type": "string"
+        }
+      },
+      "required": [
+        "pi",
+        "mnmn"
+      ],
+      "type": "object"
+    },
+    "CollectionRes-ll" : {
+      "type": "array",
+      "minItems": 2,
+      "uniqueItems": true,
+      "readOnly": true,
+      "items": {
+        "$ref": "#/definitions/oic.oic-link"
+      }
+    },
+    "CollectionRes-baseline" : {
+      "properties": {
+        "n": {
+          "$ref" : "https://openconnectivityfoundation.github.io/core/schemas/oic.common.properties.core-schema.json#/definitions/n"
+        },
+        "id": {
+          "$ref" : "https://openconnectivityfoundation.github.io/core/schemas/oic.common.properties.core-schema.json#/definitions/id"
+        },
+        "rt": {
+          "description": "Resource Type of this Resource",
+          "items": {
+            "maxLength": 64,
+            "type": "string",
+            "enum": ["oic.wk.col"]
+          },
+          "minItems": 1,
+          "uniqueItems": true,
+          "readOnly": true,
+          "type": "array"
+        },
+        "rts": {
+          "items": {
+            "type": "string",
+            "enum": ["oic.r.switch.binary", "oic.r.humidity"],
+            "maxLength": 64
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true,
+          "readOnly": true
+        },
+        "if": {
+          "description": "The OCF Interfaces supported by this Resource",
+          "items": {
+            "enum": [
+              "oic.if.ll",
+              "oic.if.create",
+              "oic.if.b",
+              "oic.if.baseline"
+            ],
+            "type": "string",
+            "maxLength": 64
+          },
+          "minItems": 1,
+          "readOnly": true,
+          "uniqueItems": true,
+          "type": "array"
+        },
+        "links": {
+          "description": "A set of simple or individual OCF Links.",
+          "items": {
+            "$ref": "#/definitions/oic.oic-link"
+          },
+          "type": "array",
+          "minItems": 2,
+          "uniqueItems": true,
+          "readOnly": true
+        }
+      },
+      "type" : "object",
+      "required": ["rt","rts","if","links"]
+    },
+    "CollectionRes-Retrieve" : {
+      "type": "array",
+      "minItems": 2,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "href": {
+            "$ref": "https://openconnectivityfoundation.github.io/core/schemas/oic.links.properties.core-schema.json#/definitions/href"
+          },
+          "rep": {
+            "anyOf": [
+              {"$ref": "https://openconnectivityfoundation.github.io/IoTDataModels/BinarySwitchResURI.swagger.json#/definitions/BinarySwitch"},
+              {"$ref": "https://openconnectivityfoundation.github.io/IoTDataModels/HumidityResURI.swagger.json#/definitions/Humidity"}
+            ]
+          }
+        },
+        "required": [
+          "href",
+          "rep"
+        ]
+      }
+    },
+    "CollectionRes-Update" : {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "href": {
+            "$ref": "https://openconnectivityfoundation.github.io/core/schemas/oic.links.properties.core-schema.json#/definitions/href"
+          },
+          "rep": {
+            "anyOf": [
+              {"$ref": "https://openconnectivityfoundation.github.io/IoTDataModels/BinarySwitchResURI.swagger.json#/definitions/BinarySwitch"},
+              {"$ref": "https://openconnectivityfoundation.github.io/IoTDataModels/HumidityResURI.swagger.json#/definitions/Humidity"}
+            ]
+          }
+        },
+        "required": [
+          "href",
+          "rep"
+        ]
+      }
+    },
+    "oic.core.rt": {
+      "description": "",
+      "items": {
+        "maxLength": 64,
+        "type": "string"
+      },
+      "minItems": 1,
+      "readOnly": true,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "oic.core.rt-col": {
+      "description": "",
+      "items": {
+        "enum": [
+          "oic.wk.col"
+        ],
+        "maxLength": 64,
+        "type": "string"
+      },
+      "minItems": 1,
+      "readOnly": true,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "oic.oic-link": {
+      "properties": {
+        "anchor": {
+          "description": "",
+          "format": "uri",
+          "maxLength": 256,
+          "type": "string"
+        },
+        "di": {
+          "description": "",
+          "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$",
+          "type": "string"
+        },
+        "eps": {
+          "description": "",
+          "items": {
+            "properties": {
+              "ep": {
+                "description": "",
+                "format": "uri",
+                "type": "string"
+              },
+              "pri": {
+                "description": "",
+                "minimum": 1,
+                "type": "integer"
+              }
+            },
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "href": {
+          "description": "",
+          "format": "uri",
+          "maxLength": 256,
+          "type": "string"
+        },
+        "if": {
+          "description": "",
+          "items": {
+            "enum": [
+              "oic.if.baseline",
+              "oic.if.ll",
+              "oic.if.b",
+              "oic.if.rw",
+              "oic.if.r",
+              "oic.if.a",
+              "oic.if.s"
+            ],
+            "maxLength": 64,
+            "type": "string"
+          },
+          "minItems": 1,
+          "readOnly": true,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "ins": {
+          "description": "",
+          "type": "integer"
+        },
+        "p": {
+          "description": "",
+          "properties": {
+            "bm": {
+              "description": "",
+              "type": "integer"
+            }
+          },
+          "required": [
+            "bm"
+          ],
+          "type": "object"
+        },
+        "rel": {
+          "default": [
+            "hosts"
+          ],
+          "description": "",
+          "items": {
+            "maxLength": 64,
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "rt": {
+          "description": "",
+          "items": {
+            "maxLength": 64,
+            "type": "string"
+          },
+          "minItems": 1,
+          "readOnly": true,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "title": {
+          "description": "",
+          "maxLength": 64,
+          "type": "string"
+        },
+        "type": {
+          "default": "application/vnd.ocf+cbor",
+          "description": "",
+          "items": {
+            "maxLength": 64,
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array"
+        }
+      },
+      "required": [
+        "href",
+        "rt",
+        "if"
+      ],
+      "type": "object"
+    },
+    "sbaseline": {
+      "additionalProperties": true,
+      "properties": {
+        "if": {
+          "description": "",
+          "items": {
+            "enum": [
+              "oic.if.ll",
+              "oic.if.create",
+              "oic.if.b",
+              "oic.if.baseline"
+            ],
+            "maxLength": 64,
+            "type": "string"
+          },
+          "maxItems": 4,
+          "minItems": 2,
+          "readOnly": true,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "links": {
+          "description": "",
+          "items": {
+            "properties": {
+              "anchor": {
+                "description": "",
+                "format": "uri",
+                "maxLength": 256,
+                "type": "string"
+              },
+              "di": {
+                "description": "",
+                "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$",
+                "type": "string"
+              },
+              "eps": {
+                "description": "",
+                "items": {
+                  "properties": {
+                    "ep": {
+                      "description": "",
+                      "format": "uri",
+                      "type": "string"
+                    },
+                    "pri": {
+                      "description": "",
+                      "minimum": 1,
+                      "type": "integer"
+                    }
+                  },
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              "href": {
+                "description": "",
+                "format": "uri",
+                "maxLength": 256,
+                "type": "string"
+              },
+              "if": {
+                "description": "",
+                "items": {
+                  "enum": [
+                    "oic.if.baseline",
+                    "oic.if.ll",
+                    "oic.if.b",
+                    "oic.if.rw",
+                    "oic.if.r",
+                    "oic.if.a",
+                    "oic.if.s"
+                  ],
+                  "maxLength": 64,
+                  "type": "string"
+                },
+                "minItems": 1,
+                "readOnly": true,
+                "type": "array",
+                "uniqueItems": true
+              },
+              "ins": {
+                "description": "",
+                "type": "integer"
+              },
+              "p": {
+                "description": "",
+                "properties": {
+                  "bm": {
+                    "description": "",
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "bm"
+                ],
+                "type": "object"
+              },
+              "rel": {
+                "default": [
+                  "hosts"
+                ],
+                "description": "",
+                "items": {
+                  "maxLength": 64,
+                  "type": "string"
+                },
+                "minItems": 1,
+                "type": "array"
+              },
+              "rt": {
+                "description": "",
+                "items": {
+                  "maxLength": 64,
+                  "type": "string"
+                },
+                "minItems": 1,
+                "readOnly": true,
+                "type": "array",
+                "uniqueItems": true
+              },
+              "title": {
+                "description": "",
+                "maxLength": 64,
+                "type": "string"
+              },
+              "type": {
+                "default": "application/vnd.ocf+cbor",
+                "description": "",
+                "items": {
+                  "maxLength": 64,
+                  "type": "string"
+                },
+                "minItems": 1,
+                "type": "array"
+              }
+            },
+            "required": [
+              "href",
+              "rt",
+              "if"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "n": {
+          "description": "",
+          "maxLength": 64,
+          "readOnly": true,
+          "type": "string"
+        },
+        "rt": {
+          "default": [
+            "oic.wk.col"
+          ],
+          "description": "",
+          "items": {
+            "enum": [
+              "oic.wk.col"
+            ],
+            "maxLength": 64,
+            "type": "string"
+          },
+          "minItems": 1,
+          "readOnly": true,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "rts": {
+          "description": "",
+          "items": {
+            "maxLength": 64,
+            "type": "string"
+          },
+          "minItems": 1,
+          "readOnly": true,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "rts-m": {
+          "description": "",
+          "items": {
+            "maxLength": 64,
+            "type": "string"
+          },
+          "minItems": 1,
+          "readOnly": true,
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "rt",
+        "if",
+        "links"
+      ],
+      "type": "object"
+    },
+    "sbaseline-update": {
+      "additionalProperties": true
+    },
+    "sbatch-retrieve": {
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "href": {
+            "description": "",
+            "format": "uri",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "rep": {
+            "oneOf": [
+              {
+                "description": "",
+                "type": "object"
+              },
+              {
+                "description": "",
+                "items": {
+                  "properties": {
+                    "anchor": {
+                      "description": "",
+                      "format": "uri",
+                      "maxLength": 256,
+                      "type": "string"
+                    },
+                    "di": {
+                      "description": "",
+                      "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$",
+                      "type": "string"
+                    },
+                    "eps": {
+                      "description": "",
+                      "items": {
+                        "properties": {
+                          "ep": {
+                            "description": "",
+                            "format": "uri",
+                            "type": "string"
+                          },
+                          "pri": {
+                            "description": "",
+                            "minimum": 1,
+                            "type": "integer"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "href": {
+                      "description": "",
+                      "format": "uri",
+                      "maxLength": 256,
+                      "type": "string"
+                    },
+                    "if": {
+                      "description": "",
+                      "items": {
+                        "enum": [
+                          "oic.if.baseline",
+                          "oic.if.ll",
+                          "oic.if.b",
+                          "oic.if.rw",
+                          "oic.if.r",
+                          "oic.if.a",
+                          "oic.if.s"
+                        ],
+                        "maxLength": 64,
+                        "type": "string"
+                      },
+                      "minItems": 1,
+                      "readOnly": true,
+                      "type": "array",
+                      "uniqueItems": true
+                    },
+                    "ins": {
+                      "description": "",
+                      "type": "integer"
+                    },
+                    "p": {
+                      "description": "",
+                      "properties": {
+                        "bm": {
+                          "description": "",
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "bm"
+                      ],
+                      "type": "object"
+                    },
+                    "rel": {
+                      "default": [
+                        "hosts"
+                      ],
+                      "description": "",
+                      "items": {
+                        "maxLength": 64,
+                        "type": "string"
+                      },
+                      "minItems": 1,
+                      "type": "array"
+                    },
+                    "rt": {
+                      "description": "",
+                      "items": {
+                        "maxLength": 64,
+                        "type": "string"
+                      },
+                      "minItems": 1,
+                      "readOnly": true,
+                      "type": "array",
+                      "uniqueItems": true
+                    },
+                    "title": {
+                      "description": "",
+                      "maxLength": 64,
+                      "type": "string"
+                    },
+                    "type": {
+                      "default": "application/vnd.ocf+cbor",
+                      "description": "",
+                      "items": {
+                        "maxLength": 64,
+                        "type": "string"
+                      },
+                      "minItems": 1,
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "href",
+                    "rt",
+                    "if"
+                  ],
+                  "type": "object"
+                },
+                "type": "array"
+              }
+            ]
+          }
+        },
+        "required": [
+          "href",
+          "rep"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "sbatch-update": {
+      "items": {
+        "additionalProperties": true,
+        "description": "",
+        "properties": {
+          "href": {
+            "description": "",
+            "format": "uri",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "rep": {
+            "oneOf": [
+              {
+                "description": "",
+                "type": "object"
+              },
+              {
+                "description": "",
+                "items": {
+                  "properties": {
+                    "anchor": {
+                      "description": "",
+                      "format": "uri",
+                      "maxLength": 256,
+                      "type": "string"
+                    },
+                    "di": {
+                      "description": "",
+                      "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$",
+                      "type": "string"
+                    },
+                    "eps": {
+                      "description": "",
+                      "items": {
+                        "properties": {
+                          "ep": {
+                            "description": "",
+                            "format": "uri",
+                            "type": "string"
+                          },
+                          "pri": {
+                            "description": "",
+                            "minimum": 1,
+                            "type": "integer"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "href": {
+                      "description": "",
+                      "format": "uri",
+                      "maxLength": 256,
+                      "type": "string"
+                    },
+                    "if": {
+                      "description": "",
+                      "items": {
+                        "enum": [
+                          "oic.if.baseline",
+                          "oic.if.ll",
+                          "oic.if.b",
+                          "oic.if.rw",
+                          "oic.if.r",
+                          "oic.if.a",
+                          "oic.if.s"
+                        ],
+                        "maxLength": 64,
+                        "type": "string"
+                      },
+                      "minItems": 1,
+                      "readOnly": true,
+                      "type": "array",
+                      "uniqueItems": true
+                    },
+                    "ins": {
+                      "description": "",
+                      "type": "integer"
+                    },
+                    "p": {
+                      "description": "",
+                      "properties": {
+                        "bm": {
+                          "description": "",
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "bm"
+                      ],
+                      "type": "object"
+                    },
+                    "rel": {
+                      "default": [
+                        "hosts"
+                      ],
+                      "description": "",
+                      "items": {
+                        "maxLength": 64,
+                        "type": "string"
+                      },
+                      "minItems": 1,
+                      "type": "array"
+                    },
+                    "rt": {
+                      "description": "",
+                      "items": {
+                        "maxLength": 64,
+                        "type": "string"
+                      },
+                      "minItems": 1,
+                      "readOnly": true,
+                      "type": "array",
+                      "uniqueItems": true
+                    },
+                    "title": {
+                      "description": "",
+                      "maxLength": 64,
+                      "type": "string"
+                    },
+                    "type": {
+                      "default": "application/vnd.ocf+cbor",
+                      "description": "",
+                      "items": {
+                        "maxLength": 64,
+                        "type": "string"
+                      },
+                      "minItems": 1,
+                      "type": "array"
+                    }
+                  },
+                  "required": [
+                    "href",
+                    "rt",
+                    "if"
+                  ],
+                  "type": "object"
+                },
+                "type": "array"
+              }
+            ]
+          }
+        },
+        "required": [
+          "href",
+          "rep"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "title": "Collection Batch Update Format",
+      "type": "array"
+    },
+    "sbatch-update.item": {
+      "additionalProperties": true,
+      "description": "",
+      "properties": {
+        "href": {
+          "description": "",
+          "format": "uri",
+          "maxLength": 256,
+          "type": "string"
+        },
+        "rep": {
+          "oneOf": [
+            {
+              "description": "",
+              "type": "object"
+            },
+            {
+              "description": "",
+              "items": {
+                "properties": {
+                  "anchor": {
+                    "description": "",
+                    "format": "uri",
+                    "maxLength": 256,
+                    "type": "string"
+                  },
+                  "di": {
+                    "description": "",
+                    "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$",
+                    "type": "string"
+                  },
+                  "eps": {
+                    "description": "",
+                    "items": {
+                      "properties": {
+                        "ep": {
+                          "description": "",
+                          "format": "uri",
+                          "type": "string"
+                        },
+                        "pri": {
+                          "description": "",
+                          "minimum": 1,
+                          "type": "integer"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "type": "array"
+                  },
+                  "href": {
+                    "description": "",
+                    "format": "uri",
+                    "maxLength": 256,
+                    "type": "string"
+                  },
+                  "if": {
+                    "description": "",
+                    "items": {
+                      "enum": [
+                        "oic.if.baseline",
+                        "oic.if.ll",
+                        "oic.if.b",
+                        "oic.if.rw",
+                        "oic.if.r",
+                        "oic.if.a",
+                        "oic.if.s"
+                      ],
+                      "maxLength": 64,
+                      "type": "string"
+                    },
+                    "minItems": 1,
+                    "readOnly": true,
+                    "type": "array",
+                    "uniqueItems": true
+                  },
+                  "ins": {
+                    "description": "",
+                    "type": "integer"
+                  },
+                  "p": {
+                    "description": "",
+                    "properties": {
+                      "bm": {
+                        "description": "",
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "bm"
+                    ],
+                    "type": "object"
+                  },
+                  "rel": {
+                    "default": [
+                      "hosts"
+                    ],
+                    "description": "",
+                    "items": {
+                      "maxLength": 64,
+                      "type": "string"
+                    },
+                    "minItems": 1,
+                    "type": "array"
+                  },
+                  "rt": {
+                    "description": "",
+                    "items": {
+                      "maxLength": 64,
+                      "type": "string"
+                    },
+                    "minItems": 1,
+                    "readOnly": true,
+                    "type": "array",
+                    "uniqueItems": true
+                  },
+                  "title": {
+                    "description": "",
+                    "maxLength": 64,
+                    "type": "string"
+                  },
+                  "type": {
+                    "default": "application/vnd.ocf+cbor",
+                    "description": "",
+                    "items": {
+                      "maxLength": 64,
+                      "type": "string"
+                    },
+                    "minItems": 1,
+                    "type": "array"
+                  }
+                },
+                "required": [
+                  "href",
+                  "rt",
+                  "if"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          ]
+        }
+      },
+      "required": [
+        "href",
+        "rep"
+      ],
+      "type": "object"
+    },
+    "slinks": {
+      "items": {
+        "properties": {
+          "anchor": {
+            "description": "",
+            "format": "uri",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "di": {
+            "description": "",
+            "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$",
+            "type": "string"
+          },
+          "eps": {
+            "description": "",
+            "items": {
+              "properties": {
+                "ep": {
+                  "description": "",
+                  "format": "uri",
+                  "type": "string"
+                },
+                "pri": {
+                  "description": "",
+                  "minimum": 1,
+                  "type": "integer"
+                }
+              },
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "href": {
+            "description": "",
+            "format": "uri",
+            "maxLength": 256,
+            "type": "string"
+          },
+          "if": {
+            "description": "",
+            "items": {
+              "enum": [
+                "oic.if.baseline",
+                "oic.if.ll",
+                "oic.if.b",
+                "oic.if.rw",
+                "oic.if.r",
+                "oic.if.a",
+                "oic.if.s"
+              ],
+              "maxLength": 64,
+              "type": "string"
+            },
+            "minItems": 1,
+            "readOnly": true,
+            "type": "array",
+            "uniqueItems": true
+          },
+          "ins": {
+            "description": "",
+            "type": "integer"
+          },
+          "p": {
+            "description": "",
+            "properties": {
+              "bm": {
+                "description": "",
+                "type": "integer"
+              }
+            },
+            "required": [
+              "bm"
+            ],
+            "type": "object"
+          },
+          "rel": {
+            "default": [
+              "hosts"
+            ],
+            "description": "",
+            "items": {
+              "maxLength": 64,
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "rt": {
+            "description": "",
+            "items": {
+              "maxLength": 64,
+              "type": "string"
+            },
+            "minItems": 1,
+            "readOnly": true,
+            "type": "array",
+            "uniqueItems": true
+          },
+          "title": {
+            "description": "",
+            "maxLength": 64,
+            "type": "string"
+          },
+          "type": {
+            "default": "application/vnd.ocf+cbor",
+            "description": "",
+            "items": {
+              "maxLength": 64,
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array"
+          }
+        },
+        "required": [
+          "href",
+          "rt",
+          "if"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "info": {
+    "license": {
+      "name": "OCF Data Model License",
+      "url": "https://github.com/openconnectivityfoundation/core/blob/e28a9e0a92e17042ba3e83661e4c0fbce8bdc4ba/LICENSE.md",
+      "x-copyright": "Copyright 2018-2019 Open Connectivity Foundation, Inc. All rights reserved."
+    },
+    "termsOfService": "https://openconnectivityfoundation.github.io/core/DISCLAIMER.md",
+    "title": "server_lite_2255",
+    "version": "20190222"
+  },
+  "parameters": {
+    "interface": {
+      "enum": [
+        "oic.if.a",
+        "oic.if.baseline"
+      ],
+      "in": "query",
+      "name": "if",
+      "type": "string"
+    },
+    "interface-all": {
+      "enum": [
+        "oic.if.ll",
+        "oic.if.create",
+        "oic.if.b",
+        "oic.if.baseline"
+      ],
+      "in": "query",
+      "name": "if",
+      "type": "string"
+    },
+    "interface-update": {
+      "enum": [
+        "oic.if.ll",
+        "oic.if.create",
+        "oic.if.b",
+        "oic.if.baseline"
+      ],
+      "in": "query",
+      "name": "if",
+      "type": "string"
+    },
+    "interface30": {
+      "enum": [
+        "oic.if.baseline",
+        "oic.if.r"
+      ],
+      "in": "query",
+      "name": "if",
+      "type": "string"
+    }
+  },
+  "paths": {
+    "/CollectionResURI?if=oic.if.baseline": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "$ref": "#/parameters/interface-all"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "x-example":  {
+              "rt":   ["oic.wk.col"],
+              "rts":  ["oic.r.switch.binary", "oic.r.humidity"],
+              "if":   ["oic.if.ll","oic.if.create","oic.if.b","oic.if.baseline"],
+              "links":[
+                {"href": "/BinarySwitchResURI", "rt":["oic.r.switch.binary"], "if":["oic.if.a","oic.if.baseline"], "eps": [{"ep": "coaps://[fe80::b1d6]:1122"}]},
+                {"href": "/HumidityResURI", "rt":["oic.r.humidity"], "if":["oic.if.a","oic.if.baseline"], "eps": [{"ep": "coaps://[fe80::b1d6]:1122"}]}
+              ]
+            },
+            "schema": {
+              "$ref": "#/definitions/CollectionRes-baseline"
+            }
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "$ref": "#/parameters/interface-update"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/sbaseline-update"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/sbaseline"
+            }
+          }
+        }
+      }
+    },
+    "/CollectionResURI?if=oic.if.b": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "$ref": "#/parameters/interface-all"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "x-example":  [
+              {
+                "href": "/BinarySwitchResURI",
+                "rep": {
+                  "value": true
+                }
+              },
+              {
+                "href": "/HumidityResURI",
+                "rep": {
+                  "humidity": 40,
+                  "desiredHumidity": 30
+                }
+              }
+            ],
+            "schema": {
+              "$ref": "#/definitions/CollectionRes-Retrieve"
+            }
+          },
+          "404": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CollectionRes-Retrieve"
+            }
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "$ref": "#/parameters/interface-update"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CollectionRes-Update"
+            },
+            "x-example": [
+              {
+                "href": "/HumidityResURI",
+                "rep": {
+                  "humidity": 40,
+                  "desiredHumidity": 30
+                }
+              }
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "x-example":  [
+              {
+                "href": "/BinarySwitchResURI",
+                "rep": {
+                  "value": true
+                }
+              },
+              {
+                "href": "/HumidityResURI",
+                "rep": {
+                  "humidity": 40,
+                  "desiredHumidity": 35
+                }
+              }
+            ],
+            "schema": {
+              "$ref": "#/definitions/CollectionRes-Retrieve"
+            }
+          },
+          "403": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CollectionRes-Retrieve"
+            }
+          }
+        }
+      }
+    },
+    "/CollectionResURI?if=oic.if.ll": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "$ref": "#/parameters/interface-all"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "x-example": [
+              {"href": "/BinarySwitchResURI", "rt":["oic.r.switch.binary"], "if":["oic.if.a","oic.if.baseline"], "eps": [{"ep": "coaps://[fe80::b1d6]:1122"}]},
+              {"href": "/HumidityResURI", "rt":["oic.r.humidity"], "if":["oic.if.a","oic.if.baseline"], "eps": [{"ep": "coaps://[fe80::b1d6]:1122"}]}
+            ],
+            "schema": {
+              "$ref": "#/definitions/CollectionRes-ll"
+            }
+          }
+        }
+      }
+    },
+    "/binaryswitch": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "$ref": "#/parameters/interface"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BinarySwitch"
+            }
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "$ref": "#/parameters/interface"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/BinarySwitch"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/BinarySwitch"
+            }
+          }
+        }
+      }
+    },
+    "/humidity": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "$ref": "#/parameters/interface"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Humidity"
+            }
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "$ref": "#/parameters/interface"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/HumidityUpdate"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/HumidityUpdate"
+            }
+          }
+        }
+      }
+    },
+    "/oic/p": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "$ref": "#/parameters/interface30"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Platform"
+            }
+          }
+        }
+      }
+    }
+  },
+  "produces": [
+    "application/json"
+  ],
+  "schemes": [
+    "http"
+  ],
+  "swagger": "2.0"
+}
